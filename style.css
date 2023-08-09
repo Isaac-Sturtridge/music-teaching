@@ -1,0 +1,19 @@
+.clef-container {
+    text-align: center;
+}
+
+.clef-image {
+    width: 10%;
+    height: 10%;
+}
+
+.note-button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px;
+    background-colour: #3498db;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

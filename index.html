@@ -6,18 +6,45 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="style.css">
     <script src="http://unpkg.com/tone"></script>
-    <script>
-        function playNote() {
-            // create a synth
+		<script>
+			function playNote(note) {
+				// create a synth
+				const synth = new Tone.Synth().toDestination();
+				// play a note from that synth
+				synth.triggerAttackRelease(note, "8n");
+			}
+      document.addEventListener('DOMContentLoaded', () => {
+        Tone.start()
+        const button = document.getElementById('button');
+        const noteButtons = document.querySelectorAll('.note_button');
+    
+        button.addEventListener('click', () => {
             const synth = new Tone.Synth().toDestination();
-            // play a note from that synth
             synth.triggerAttackRelease("C4", "8n");
-        }
-    </script>
+        });
+    
+        noteButtons.forEach((button) => 
+            button.addEventListener('click', () => {
+                const note = button.getAttribute('data-note');
+                playNote(note);
+        }));
+    });
+		</script>
+    <script src="https://cdn.jsdelivr.net/npm/tone@14"></script>
+    <script type="module" src="app.js"></script>
 </head>
 <body>
-    <button type="button" id="button" onClick="playNote()">Middle C</button>
-    
-    <script src="app.js"></script>
+    <button type="button" onclick="playNote(C4)">Middle C (1)</button>
+    <button type="button" id="button">Middle C</button>
+    <div class="clef-container">
+      <img src="treble_clef.png" alt="treble_clef" class="clef-image">
+      <button type="button" class="note_button" data-note="C4">C4</button>
+      <button type="button" class="note_button" data-note="D4">D4</button>
+      <button type="button" class="note_button" data-note="E4">E4</button>
+      <button type="button" class="note_button" data-note="F4">F4</button>
+      <button type="button" class="note_button" data-note="G4">G4</button>
+      <button type="button" class="note_button" data-note="A5">A5</button>
+      <button type="button" class="note_button" data-note="B5">B5</button>
+    </div>rcs
 </body>
 </html>
