@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://unpkg.com/tone"></script>
+    <script>
+        function playNote() {
+            // create a synth
+            const synth = new Tone.Synth().toDestination();
+            // play a note from that synth
+            synth.triggerAttackRelease("C4", "8n");
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id="button" onClick="playNote()">Middle C</button>
+    
+    <script src="app.js"></script>
+</body>
+</html>
