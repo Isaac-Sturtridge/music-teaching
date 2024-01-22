@@ -1,0 +1,23 @@
+.lesson {
+    border: 2px solid black;
+    text-align: center;
+    background-color: darksalmon;
+}
+
+.clef-img {
+    height: 5vw;
+}
+
+svg > rect {
+    background-color: brown;
+}
+
+svg > line {
+    background-color: green;
+    border: 2px solid red
+}
+
+.ladder {
+    display: flex;
+    padding: 1rem;
+}
