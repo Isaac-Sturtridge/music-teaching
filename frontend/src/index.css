@@ -8,11 +8,11 @@
     height: 5vw;
 }
 
-svg > rect {
+.rect {
     background-color: brown;
 }
 
-svg > line {
+.line {
     background-color: green;
     border: 2px solid red
 }
@@ -20,4 +20,5 @@ svg > line {
 .ladder {
     display: flex;
     padding: 1rem;
+    justify-content: center;
 }
