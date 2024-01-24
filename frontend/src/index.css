@@ -22,3 +22,8 @@
     padding: 1rem;
     justify-content: center;
 }
+
+.svg-text {
+    font-weight: bold;
+    color: black;
+}

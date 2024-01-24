@@ -12,7 +12,7 @@ function App() {
       <div className="App">
       <main className="App-main">
         <div className="lesson">
-            <h2>Lesson 1: Introduction to Music: Treble & Bass Clefs</h2>
+            <h2>Music</h2>
             <img src={TrebleClef} alt="treble-clef" className="clef-img"></img>
             <p>This is a treble clef sign. It marks notes higher than middle C.</p>
             <img src={BassClef} alt="bass-clef" className="clef-img"></img>
