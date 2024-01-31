@@ -3,8 +3,30 @@ import TrebleClef from './assets/treble-clef.png';
 import Header from './components/header';
 import Footer from './components/footer';
 import MusicPlayer from './components/music-player';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function App() {
+  const [message, setMessage] = useState('')
+  const api = axios.create({
+    baseURL: "http://127.0.0.1:5000"
+  })
+
+  useEffect(() => {
+    api.get('/test')
+    .then((res) => {
+      return res.data
+    })
+    .then((data) => {
+      console.log("Raw response", data)
+      setMessage(data.message)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  })
+
+  console.log(message)
 
   return (
     <>
