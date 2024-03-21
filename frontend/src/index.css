@@ -1,7 +1,9 @@
+
+
 .lesson {
-    border: 2px solid black;
+    border: 2px dotted black;
     text-align: center;
-    background-color: darksalmon;
+    background-color: beige;
 }
 
 .clef-img {
@@ -26,4 +28,18 @@
 .svg-text {
     font-weight: bold;
     color: black;
+}
+
+.App-header {
+    border: 1px dotted black;
+    background-color: greenyellow;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.App-footer {
+    border: 1px dotted black;
+    background-color: greenyellow;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
