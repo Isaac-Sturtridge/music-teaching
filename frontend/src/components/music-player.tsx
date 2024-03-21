@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from 'react';
 import * as Tone from 'tone';
+import { Renderer, Stave } from "vexflow";
 
 function playNote(note: string) {
     // create a synth
@@ -10,7 +12,23 @@ function playNote(note: string) {
 const notes = ["G5", "F5", "E5", "D5", "C5", "B4", "A4", "G4", "F4", "E4", "D4", "C4"]
 
 function MusicPlayer() {
+  const outputRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if(outputRef.current) {
+      const stave = new Stave(10, 40, 400);
+      const renderer = new Renderer(outputRef.current, Renderer.Backends.SVG)
+      const context = renderer.getContext();
+      stave.addClef('treble').addTimeSignature('4/4');
+      
+      stave.setContext(context).draw();
+    }
+  }, [])
+  
     return (
+      <>
+      <div ref={outputRef} id="output">
+      </div>
         <div className='ladder'>
                         <svg width="20%" height="600">
                   <rect y="50" width="20" height="262" className='rect' />
@@ -41,6 +59,7 @@ function MusicPlayer() {
                   <line x1="0" y1="260" x2="90%" y2="260" stroke="black" strokeWidth="2" className='line'/>
             </svg>
             </div>
+            </>
     )
 }
 

@@ -5,6 +5,8 @@ import Footer from './components/footer';
 import MusicPlayer from './components/music-player';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Ladder from './components/ladder';
 
 function App() {
   const [message, setMessage] = useState('')
@@ -40,6 +42,7 @@ function App() {
             <img src={BassClef} alt="bass-clef" className="clef-img"></img>
             <p>This is a bass clef. It marks notes lower than middle C.</p>
             <MusicPlayer></MusicPlayer>
+            <Ladder></Ladder>
         </div>
       </main>
     </div>
